@@ -32,12 +32,8 @@ app_mode = st.sidebar.selectbox("Select Page",["Home","About","Disease Recogniti
 #Main Page
 if(app_mode=="Home"):
     st.header("WHEAT DISEASE DETECTION SYSTEM")
-    from PIL import Image
-    image = Image.open("home page1.jpg")
-    # Crop height - adjust the numbers to control how much height you want
-    width, height = image.size
-    cropped_image = image.crop((0, 0, width, height//3))  # Takes top half of image
-    st.image(cropped_image, use_container_width=True)
+    image_path = "home page2.jpg"
+    st.image(image_path,use_column_width=True)
     st.markdown("""
     ### Welcome to the Wheat Disease Recognition System!!!
     
