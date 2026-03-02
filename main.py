@@ -36,7 +36,7 @@ if(app_mode=="Home"):
     image = Image.open("home page2.jpg")
     # Crop height - adjust the numbers to control how much height you want
     width, height = image.size
-    cropped_image = image.crop((0, 0, width, height//2))  # Takes top half of image
+    cropped_image = image.crop((0, 0, width, height//3))  # Takes top half of image
     st.image(cropped_image, use_container_width=True)
     st.markdown("""
     ### Welcome to the Wheat Disease Recognition System!!!
