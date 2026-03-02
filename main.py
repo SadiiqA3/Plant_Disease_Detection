@@ -65,20 +65,36 @@ elif(app_mode=="About"):
 
                 This dataset consists of about 14.2K rgb images of healthy and diseased crop leaves which are categorized into 15 different classes. 
 
-                Some Of the diseases included in the dataset are:
-                1. Brown Rust
-                2. Yellow Rust
-                3. Powdery Mildew
-                4. Septoria Leaf Blotch
-                5. Aphid [Pest]
-                6. Mite [Pest]
-                7. Stem Rust
-                8. Common Root Rot etc.
+                 ### 🌾 Diseases & Pests the Model Can Detect:
+
+    | # | Disease/Pest | Type |
+    |---|-------------|------|
+    | 1 | Aphid | Pest |
+    | 2 | Black Rust | Fungal Disease |
+    | 3 | Blast | Fungal Disease |
+    | 4 | Brown Rust | Fungal Disease |
+    | 5 | Common Root Rot | Fungal Disease |
+    | 6 | Fusarium Head Blight | Fungal Disease |
+    | 7 | Healthy | - |
+    | 8 | Leaf Blight | Fungal Disease |
+    | 9 | Mildew | Fungal Disease |
+    | 10 | Mite | Pest |
+    | 11 | Septoria | Fungal Disease |
+    | 12 | Smut | Fungal Disease |
+    | 13 | Stem Fly | Pest |
+    | 14 | Tan Spot | Fungal Disease |
+    | 15 | Yellow Rust | Fungal Disease |
 
                 #### Content
                 1. Train (13,104 images)
                 2. Test (750 images)
                 3. Validation (300 images)
+
+                 ### 🤖 Model Performance
+    - **Training Accuracy:** 93%
+    - **Validation Accuracy:** 89%
+    - **Total Classes:** 15
+    - **Image Size:** 128 x 128 pixels
 
                 """)
 
