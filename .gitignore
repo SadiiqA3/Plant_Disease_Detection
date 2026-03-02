@@ -1,0 +1,6 @@
+data/trained_model_10m.keras 
+data/train/ 
+data/valid/ 
+data/test/ 
+data/.ipynb_checkpoints/ 
+.ipynb_checkpoints/ 
