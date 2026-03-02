@@ -33,7 +33,9 @@ app_mode = st.sidebar.selectbox("Select Page",["Home","About","Disease Recogniti
 if(app_mode=="Home"):
     st.header("WHEAT DISEASE DETECTION SYSTEM")
     image_path = "home page2.jpg"
-    st.image(image_path,use_column_width=True)
+    col1, col2, col3 = st.columns([1,2,1])
+    with col2:
+        st.image(image_path, use_container_width=True)
     st.markdown("""
     ### Welcome to the Wheat Disease Recognition System!!!
     
@@ -87,7 +89,10 @@ elif(app_mode=="Disease Recognition"):
     st.header("Disease Recognition")
     test_image = st.file_uploader("Choose an Image:")
     if(st.button("Show Image")):
-        st.image(test_image,width=4,use_column_width=True)
+        if test_image is not None:
+            st.image(test_image, use_container_width=True)
+        else:
+            st.warning("⚠️ Please upload an image first!")
     #Predict button
     if(st.button("Predict")):
         st.snow()
