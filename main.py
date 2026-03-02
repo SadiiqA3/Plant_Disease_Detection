@@ -32,7 +32,7 @@ app_mode = st.sidebar.selectbox("Select Page",["Home","About","Disease Recogniti
 #Main Page
 if(app_mode=="Home"):
     st.header("WHEAT DISEASE DETECTION SYSTEM")
-    image_path = "home page2.jpg"
+    image_path = "home page1.jpg"
     st.image(image_path,use_column_width=True)
     st.markdown("""
     ### Welcome to the Wheat Disease Recognition System!!!
