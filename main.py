@@ -19,11 +19,11 @@ if not os.path.exists("trained_model_10m.keras"):
 #Tensorflow Model Prediction
 def model_prediction(test_image):
     model = tf.keras.models.load_model("trained_model_10m.keras")
-    image = tf.keras.preprocessing.image.load_img(test_image,target_size=(128,128))
+    image = tf.keras.preprocessing.image.load_img(test_image, target_size=(128,128))
     input_arr = tf.keras.preprocessing.image.img_to_array(image)
-    input_arr = np.array([input_arr]) #convert single image to batch
+    input_arr = np.array([input_arr])
     prediction = model.predict(input_arr)
-    return np.argmax(prediction) #return index of max element
+    return np.argmax(prediction), prediction[0]  # return index AND all confidence scores
 
 #Sidebar
 st.sidebar.title("Dashboard")
@@ -92,12 +92,24 @@ elif(app_mode=="Disease Recognition"):
         else:
             st.warning("⚠️ Please upload an image first!")
     #Predict button
-    if(st.button("Predict")):
-        st.snow()
-        st.write("Our Prediction")
-        result_index = model_prediction(test_image)
-        #Reading Labels
-        class_name = ['Aphid', 'Black Rust', 'Blast', 'Brown Rust', 'Common Root Rot', 
-               'Fusarium Head Blight', 'Healthy', 'Leaf Blight', 'Mildew', 
-               'Mite', 'Septoria', 'Smut', 'Stem fly', 'Tan spot', 'Yellow Rust']
-        st.success("The Model is Predicting it's a {}".format(class_name[result_index]))
+if(st.button("Predict")):
+    st.snow()
+    st.write("Our Prediction")
+    class_name = ['Aphid', 'Black Rust', 'Blast', 'Brown Rust', 'Common Root Rot', 
+                  'Fusarium Head Blight', 'Healthy', 'Leaf Blight', 'Mildew', 
+                  'Mite', 'Septoria', 'Smut', 'Stem fly', 'Tan spot', 'Yellow Rust']
+    
+    result_index, confidence_scores = model_prediction(test_image)
+    
+    # Show predicted disease
+    st.success("✅ The Model is Predicting it's a **{}**".format(class_name[result_index]))
+    
+    # Show confidence distribution
+    st.write("### Confidence Scores:")
+    for i, (disease, score) in enumerate(zip(class_name, confidence_scores)):
+        percentage = float(score) * 100
+        if i == result_index:
+            st.write(f"**🏆 {disease}**")
+        else:
+            st.write(f"{disease}")
+        st.progress(float(score), text=f"{percentage:.2f}%")
