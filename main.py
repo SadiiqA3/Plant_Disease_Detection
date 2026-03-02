@@ -2,9 +2,23 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 
+import gdown
+import os
+
+# Download model from Google Drive if not present
+if not os.path.exists("trained_model_10m.keras"):
+    gdown.download(
+        "https://drive.google.com/uc?id=1RUkyD-2Wzp8LpxDLn8W9W9Y519VHIClW",
+        "trained_model_10m.keras",
+        quiet=False
+    )
+
+
+
+
 #Tensorflow Model Prediction
 def model_prediction(test_image):
-    model = tf.keras.models.load_model("data/trained_model_10m.keras")
+    model = tf.keras.models.load_model("trained_model_10m.keras")
     image = tf.keras.preprocessing.image.load_img(test_image,target_size=(128,128))
     input_arr = tf.keras.preprocessing.image.img_to_array(image)
     input_arr = np.array([input_arr]) #convert single image to batch
@@ -36,7 +50,7 @@ if(app_mode=="Home"):
     - **Fast and Efficient:** Receive results in seconds, allowing for quick decision-making.
 
     ### Get Started
-    Click on the **Disease Recognition** page in the sidebar to upload an image and experience the power of our Plant Disease Recognition System!
+    Click on the **Disease Recognition** page in the sidebar to upload an image and experience the power of my Wheat Disease Recognition System!
 
     ### About Me
     Learn more about the project, dataset and some disease in the dataset on the **About** page.
