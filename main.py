@@ -60,12 +60,18 @@ if(app_mode=="Home"):
 elif(app_mode=="About"):
     st.header("About")
     st.markdown("""
-                 This dataset was downloaded from kaggle. It was designed to empower researchers and developers in creating robust machine learning models for classifying various wheat plant diseases.
-                It offers a collection of high-resolution images showcasing real-world wheat diseases without the use of artificial augmentation techniques.
+    ###  Dataset Information
+    This dataset was downloaded from Kaggle. It was designed to empower researchers and developers 
+    in creating robust machine learning models for classifying various wheat plant diseases.
+    It offers a collection of high-resolution images showcasing real-world wheat diseases 
+    without the use of artificial augmentation techniques.
 
-                This dataset consists of about 14.2K rgb images of healthy and diseased crop leaves which are categorized into 15 different classes. 
+    This dataset consists of about 14.2K RGB images of healthy and diseased crop leaves 
+    which are categorized into 15 different classes.
 
-                 ### 🌾 Diseases & Pests the Model Can Detect:
+    ---
+
+    ###  Diseases & Pests the Model Can Detect:
 
     | # | Disease/Pest | Type |
     |---|-------------|------|
@@ -75,7 +81,7 @@ elif(app_mode=="About"):
     | 4 | Brown Rust | Fungal Disease |
     | 5 | Common Root Rot | Fungal Disease |
     | 6 | Fusarium Head Blight | Fungal Disease |
-    | 7 | Healthy | - |
+    | 7 | Healthy | Disease Free |
     | 8 | Leaf Blight | Fungal Disease |
     | 9 | Mildew | Fungal Disease |
     | 10 | Mite | Pest |
@@ -85,18 +91,23 @@ elif(app_mode=="About"):
     | 14 | Tan Spot | Fungal Disease |
     | 15 | Yellow Rust | Fungal Disease |
 
-                #### Content
-                1. Train (13,104 images)
-                2. Test (750 images)
-                3. Validation (300 images)
+    ---
 
-                 ### 🤖 Model Performance
+    ###  Dataset Split
+    | Split | Images |
+    |-------|--------|
+    | Train | 13,104 |
+    | Test | 750 |
+    | Validation | 300 |
+
+    ---
+
+    ### Model Performance
     - **Training Accuracy:** 93%
     - **Validation Accuracy:** 89%
     - **Total Classes:** 15
     - **Image Size:** 128 x 128 pixels
-
-                """)
+    """)
 
 #Prediction Page
 elif(app_mode=="Disease Recognition"):
