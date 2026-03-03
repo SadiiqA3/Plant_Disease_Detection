@@ -63,13 +63,13 @@ if(app_mode == "Home"):
     ### Get Started
     Click on the **Disease Recognition** page in the sidebar to upload an image and experience the power of my Wheat Disease Recognition System!
 
-    ### About Me
+    ### About Project
     Learn more about the project, dataset and some disease in the dataset on the **About** page.
     """)
 
 # About Project
 elif(app_mode == "About"):
-    st.header("About Project")
+    st.header("About")
     st.markdown("""
     ### Dataset Information
     This dataset was downloaded from Kaggle. It was designed to empower researchers and developers 
