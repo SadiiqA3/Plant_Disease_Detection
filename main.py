@@ -4,6 +4,21 @@ import numpy as np
 import gdown
 import os
 
+
+# Custom CSS for pointer cursor
+st.markdown("""
+    <style>
+        div[data-baseweb="select"] {
+            cursor: pointer;
+        }
+        div[data-baseweb="select"] * {
+            cursor: pointer !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+
+
 # Download model from Google Drive if not present
 if not os.path.exists("trained_model_10m.keras"):
     gdown.download(
