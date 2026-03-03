@@ -69,7 +69,7 @@ if(app_mode == "Home"):
 
 # About Project
 elif(app_mode == "About"):
-    st.header("About")
+    st.header("About Project")
     st.markdown("""
     ### Dataset Information
     This dataset was downloaded from Kaggle. It was designed to empower researchers and developers 
