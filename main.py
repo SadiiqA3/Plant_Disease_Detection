@@ -53,10 +53,9 @@ if(app_mode == "Home"):
     ### How It Works
     1. **Upload Image:** Go to the **Disease Recognition** page and upload an image of a plant with suspected diseases.
     2. **Analysis:** The system will process the image using advanced algorithms to identify potential diseases.
-    3. **Results:** View the results and recommendations for further action.
+    3. **Results:** View the results for further action.
 
     ### Why Choose My System?
-    - **Accuracy:** My system utilizes state-of-the-art machine learning techniques for accurate disease detection.
     - **User-Friendly:** Simple and intuitive interface for seamless user experience.
     - **Fast and Efficient:** Receive results in seconds, allowing for quick decision-making.
 
@@ -114,8 +113,8 @@ elif(app_mode == "About"):
     ---
 
     ### Model Performance
-    - **Training Accuracy:** 93%
-    - **Validation Accuracy:** 89%
+    - **Training Accuracy:** 88%
+    - **Validation Accuracy:** 81%
     - **Total Classes:** 15
     - **Image Size:** 128 x 128 pixels
     """)
