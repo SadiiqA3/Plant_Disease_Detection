@@ -1,7 +1,6 @@
-keras==3.13.2 
-numpy==2.3.5 
-opencv-python-headless 
-streamlit 
-pillow 
-gdown 
-jax 
+tensorflow==2.19.0
+numpy==2.1.3
+opencv-python-headless
+streamlit
+pillow
+gdown
