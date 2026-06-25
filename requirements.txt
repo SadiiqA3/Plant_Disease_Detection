@@ -1,6 +1,7 @@
-tensorflow==2.21.0 
+keras==3.13.2 
 numpy==2.3.5 
 opencv-python-headless 
 streamlit 
 pillow 
 gdown 
+jax 
