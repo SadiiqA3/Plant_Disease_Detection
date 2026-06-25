@@ -1,5 +1,7 @@
 import streamlit as st
-import tensorflow as tf
+import keras
+import numpy as np
+from PIL import Image
 import numpy as np
 import gdown
 import os
@@ -29,12 +31,12 @@ if not os.path.exists("trained_model_10m.keras"):
 
 # Tensorflow Model Prediction
 def model_prediction(test_image):
-    model = tf.keras.models.load_model("trained_model_10m.keras")
-    image = tf.keras.preprocessing.image.load_img(test_image, target_size=(128, 128))
-    input_arr = tf.keras.preprocessing.image.img_to_array(image)
+    model = keras.models.load_model("trained_model_10m.keras")
+    image = Image.open(test_image).resize((128, 128))
+    input_arr = np.array(image) / 255.0
     input_arr = np.array([input_arr])
     prediction = model.predict(input_arr)
-    return np.argmax(prediction), prediction[0]  # return index AND all confidence scores
+    return np.argmax(prediction), prediction[0]
 
 # Sidebar
 st.sidebar.title("Dashboard")
