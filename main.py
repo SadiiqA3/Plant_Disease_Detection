@@ -1,8 +1,7 @@
 import streamlit as st
-import keras
+from tensorflow import keras
 import numpy as np
 from PIL import Image
-import numpy as np
 import gdown
 import os
 
