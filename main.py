@@ -31,10 +31,17 @@ if not os.path.exists("trained_model_10m.keras"):
 # Tensorflow Model Prediction
 def model_prediction(test_image):
     model = keras.models.load_model("trained_model_10m.keras")
-    image = Image.open(test_image).resize((128, 128))
-    input_arr = np.array(image) / 255.0
-    input_arr = np.array([input_arr])
-    prediction = model.predict(input_arr)
+
+    image = Image.open(test_image).convert("RGB")
+    image = image.resize((128, 128))
+
+    # Do NOT divide by 255 here.
+    # The trained model already contains a Rescaling layer.
+    input_arr = np.array(image, dtype=np.float32)
+    input_arr = np.expand_dims(input_arr, axis=0)
+
+    prediction = model.predict(input_arr, verbose=0)
+
     return np.argmax(prediction), prediction[0]
 
 # Sidebar
