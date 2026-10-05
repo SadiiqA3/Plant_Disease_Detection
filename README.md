@@ -37,7 +37,7 @@ HOW IT WORKS.
 
 The system follows a simple machine learning pipeline:
 
-![Machine Learning Pipeline](data/ML Pipeline.png)
+![Machine Learning Pipeline](data/ML-Pipeline.png)
 
 PREDICTION OVERFLOW.
 
@@ -50,7 +50,7 @@ PREDICTION OVERFLOW.
 7. The class with the highest probability is selected.
 8. The application displays the predicted disease and confidence score.
 
-![System Architecture Example](data/System Arch.png)
+![System Architecture Example](data/System-Arch.png)
 
 MACHINE LEARNING.
 
